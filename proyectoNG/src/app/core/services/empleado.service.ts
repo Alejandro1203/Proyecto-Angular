@@ -1,0 +1,1 @@
+import {empleados} from './json.service';

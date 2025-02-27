@@ -1,5 +1,5 @@
 {
-    "departamentos": [
+    "lista_departamentos": [
         {
             "id": 1,
             "name": "Contabilidad",

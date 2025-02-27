@@ -1,0 +1,1 @@
+import { departamentos } from "./json.service";
