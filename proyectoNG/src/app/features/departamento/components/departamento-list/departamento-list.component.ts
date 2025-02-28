@@ -14,7 +14,7 @@ export class DepartamentoListComponent {
   departamentos: Departamento[] = [];
 
   constructor(private departamentoService: DepartamentoService) {
-    this.departamentos = departamentoService.getAllDepartamentos();
+    this.departamentos = this.departamentoService.getAllDepartamentos();
   }
 
 }
