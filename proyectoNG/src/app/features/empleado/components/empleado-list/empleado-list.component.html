@@ -1,4 +1,8 @@
 <div>
+    <select id="slc_departamento" (change)="getEmpleadosByDepartamento()">
+        <option value="0">Todos</option>
+        <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{departamento.name}}</option>
+    </select>
     <table>
         <thead>
             <th>Id</th>
