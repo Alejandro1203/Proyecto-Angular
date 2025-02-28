@@ -10,7 +10,24 @@
                 <td>{{departamento.id}}</td>
                 <td>{{departamento.name}}</td>
                 <td>{{departamento.location}}</td>
-                <td><button>Ver Empleados</button></td>
+                <td><button (click)="mostrarEmpleados(departamento.id, departamento.name)">Ver Empleados</button></td>
+            </tr>
+    </table>
+</div>
+
+<div *ngIf="empleadosDepartamentoId.length > 0">
+    <h3>Empleados {{nombreDepartamento}}</h3>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Puesto</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empleado of empleadosDepartamentoId">
+                <td>{{empleado.id}}</td>
+                <td>{{empleado.name}}</td>
+                <td>{{empleado.puesto}}</td>
             </tr>
     </table>
 </div>
