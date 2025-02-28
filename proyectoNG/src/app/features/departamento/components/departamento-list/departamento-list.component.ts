@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DepartamentoService } from '../../../../core/services/departamento.service';
+import { Departamento } from '../../../../core/models/departamento.model';
 
 @Component({
   selector: 'app-departamento-list',
@@ -9,5 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class DepartamentoListComponent {
 
+  departamentos: Departamento[] = [];
+
+  constructor(private departamentoService: DepartamentoService) {
+    this.departamentos = departamentoService.getAllDepartamentos();
+  }
 
 }
