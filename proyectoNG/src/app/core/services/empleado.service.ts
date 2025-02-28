@@ -14,4 +14,5 @@ export class EmpleadoService {
     getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
         return empleados.filter(empleado => empleado.id_departamento === departamentoId);
     }
+
 }
