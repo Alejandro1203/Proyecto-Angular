@@ -7,6 +7,7 @@ import { Departamento } from "../models/departamento.model";
 })
 
 export class DepartamentoService {
+    
     getAllDepartamentos(): Departamento[] {
         return departamentos;
     }

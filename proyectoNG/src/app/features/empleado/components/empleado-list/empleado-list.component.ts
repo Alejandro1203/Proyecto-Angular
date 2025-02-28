@@ -21,12 +21,10 @@ export class EmpleadoListComponent {
   }
 
   getEmpleadosByDepartamento(): Empleado[] {
-    const slc_departamento = document.getElementById('slc_departamento') as HTMLSelectElement;
+    const slc_departamento = Number((document.getElementById('slc_departamento') as HTMLSelectElement).value);
 
-    this.empleados = slc_departamento.value === '0' ? this.empleadoService.getAllEmpleados() : this.empleadoService.getEmpleadosByDepartamento(Number(slc_departamento.value));
-
+    this.empleados = slc_departamento === 0 ? this.empleadoService.getAllEmpleados() : this.empleadoService.getEmpleadosByDepartamento(slc_departamento);
 
     return this.empleados;
   }
-
 }

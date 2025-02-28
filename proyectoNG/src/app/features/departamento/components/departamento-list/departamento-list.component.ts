@@ -11,23 +11,20 @@ import { EmpleadoService } from '../../../../core/services/empleado.service';
   templateUrl: './departamento-list.component.html',
   styleUrl: './departamento-list.component.css'
 })
+
 export class DepartamentoListComponent {
 
   departamentos: Departamento[] = [];
   nombreDepartamento: string = '';
   
   empleados: Empleado[] = [];
-  empleadosDepartamentoId: Empleado[] = [];
   
-
   constructor(private departamentoService: DepartamentoService, private empleadoService: EmpleadoService) {
     this.departamentos = this.departamentoService.getAllDepartamentos();
-    this.empleados = this.empleadoService.getAllEmpleados();
   }
 
   mostrarEmpleados(departamentoId: number, departamentoNombre: string) {
-    this.empleadosDepartamentoId = this.empleadoService.getEmpleadosByDepartamento(departamentoId);
+    this.empleados = this.empleadoService.getEmpleadosByDepartamento(departamentoId);
     this.nombreDepartamento = departamentoNombre;
   }
-
 }

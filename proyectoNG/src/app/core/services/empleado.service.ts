@@ -1,4 +1,4 @@
-import {empleados} from './json.service';
+import { empleados } from './json.service';
 import { Injectable } from "@angular/core";
 import { Empleado } from "../models/empleado.model";
 
@@ -7,6 +7,7 @@ import { Empleado } from "../models/empleado.model";
 })
 
 export class EmpleadoService {
+    
     getAllEmpleados(): Empleado[] {
         return empleados;
     }
@@ -14,5 +15,4 @@ export class EmpleadoService {
     getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
         return empleados.filter(empleado => empleado.id_departamento === departamentoId);
     }
-
 }

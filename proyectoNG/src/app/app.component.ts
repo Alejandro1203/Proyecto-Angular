@@ -6,7 +6,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css', '../styles.css']
 })
 export class AppComponent {
   title = 'proyectoNG';
