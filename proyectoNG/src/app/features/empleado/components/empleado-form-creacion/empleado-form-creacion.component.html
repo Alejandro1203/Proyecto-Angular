@@ -1,1 +1,14 @@
-<p>empleado-form-creacion works!</p>
+<h2 class="section-heading">Crear Empleado</h2>
+<form [formGroup]="createForm">
+    <select id="slc_departamento" formControlName="idDepartamento">
+        <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{ departamento.name }}</option>
+    </select>
+
+    <label for="name">Nombre</label>
+    <input id="name" type="text" formControlName="name">
+
+    <label for="job-position">Puesto</label>
+    <input id="job-position" type="text" formControlName="jobPosition">
+
+    <button type="submit" class="primary">Crear Empleado</button>
+</form>
