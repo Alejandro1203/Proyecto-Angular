@@ -38,4 +38,14 @@ export class EmpleadoListComponent {
     
     return this.empleados;
   }
+
+  eliminarEmpleado(empleadoId: number): void {
+    if(confirm('¿Está seguro de eliminar este empleado?')) {
+      this.empleadoService.eliminarEmpleado(empleadoId).then(() => {
+        this.empleadoService.getAllEmpleados().then(empleados => {
+          this.empleados = empleados;
+        });
+      });
+    }
+  }
 }

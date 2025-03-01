@@ -10,6 +10,8 @@
             <th>Nombre</th>
             <th>Ubicacion</th>
             <th>ID_Departamento</th>
+            <th></th>
+            <th></th>
         </thead>
 
         <tbody>
@@ -18,6 +20,8 @@
                 <td>{{empleado.name}}</td>
                 <td>{{empleado.puesto}}</td>
                 <td>{{empleado.id_departamento}}</td>
+                <td><button>Editar</button></td>
+                <td><button (click)="eliminarEmpleado(empleado.id)">Eliminar</button></td>
             </tr>
     </table>
 </div>

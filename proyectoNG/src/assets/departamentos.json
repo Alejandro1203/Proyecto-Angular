@@ -1,22 +1,22 @@
 {
     "lista_departamentos": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Contabilidad",
             "location": "Madrid"
         }, 
         {
-            "id": 2,
+            "id": "2",
             "name": "Marketing",
             "location": "Barcelona"
         }, 
         {
-            "id": 3,
+            "id": "3",
             "name": "Ventas",
             "location": "Alicante"
         }, 
         {
-            "id": 4,
+            "id": "4",
             "name": "Logística",
             "location": "Valencia"
         }

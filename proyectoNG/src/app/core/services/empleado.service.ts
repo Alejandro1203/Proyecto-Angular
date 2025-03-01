@@ -27,6 +27,12 @@ export class EmpleadoService {
         });
     }
 
+    async eliminarEmpleado(empleadoId: number): Promise<void> {
+        await fetch(`${this.jsonService.url_empleados}/${empleadoId}`, {
+            method: 'DELETE'
+        });
+    }
+
     getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
         return this.empleados.filter(empleado => empleado.id_departamento === departamentoId);
     }
