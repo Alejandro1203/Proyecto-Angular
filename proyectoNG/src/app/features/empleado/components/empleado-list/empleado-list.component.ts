@@ -16,15 +16,26 @@ export class EmpleadoListComponent {
   departamentos: Departamento[] = [];
 
   constructor(private empleadoService: EmpleadoService, private departamentoService: DepartamentoService) {
-    this.empleados = this.empleadoService.getAllEmpleados();
-    this.departamentos = this.departamentoService.getAllDepartamentos();
+    this.empleadoService.getAllEmpleados().then(empleados => {
+      this.empleados = empleados;
+    });
+
+    this.departamentoService.getAllDepartamentos().then(departamentos => {
+      this.departamentos = departamentos;
+    });
   }
 
   getEmpleadosByDepartamento(): Empleado[] {
     const slc_departamento = Number((document.getElementById('slc_departamento') as HTMLSelectElement).value);
 
-    this.empleados = slc_departamento === 0 ? this.empleadoService.getAllEmpleados() : this.empleadoService.getEmpleadosByDepartamento(slc_departamento);
-
+    if (slc_departamento === 0) {
+      this.empleadoService.getAllEmpleados().then(empleados => {
+        this.empleados = empleados;
+      });
+    } else {
+      this.empleados = this.empleadoService.getEmpleadosByDepartamento(slc_departamento);
+    }
+    
     return this.empleados;
   }
 }

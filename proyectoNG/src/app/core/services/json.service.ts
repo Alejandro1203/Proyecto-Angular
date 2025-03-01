@@ -1,5 +1,10 @@
-import { lista_departamentos } from '../../../assets/departamentos.json';
-import { lista_empleados } from '../../../assets/empleado.json';
+import { Injectable } from "@angular/core";
 
-export const departamentos = lista_departamentos;
-export const empleados = lista_empleados;
+@Injectable({
+    providedIn: 'root'
+})
+
+export class JsonService {
+    url_departamentos = 'http://localhost:3000/lista_departamentos';
+    url_empleados = 'http://localhost:3001/lista_empleados';
+}

@@ -1,4 +1,4 @@
-import { empleados } from './json.service';
+import { JsonService } from "./json.service";
 import { Injectable } from "@angular/core";
 import { Empleado } from "../models/empleado.model";
 
@@ -7,12 +7,17 @@ import { Empleado } from "../models/empleado.model";
 })
 
 export class EmpleadoService {
-    
-    getAllEmpleados(): Empleado[] {
-        return empleados;
+    empleados: Empleado[] = [];
+
+    constructor(private jsonService: JsonService) { }
+
+    async getAllEmpleados(): Promise<Empleado[]> {
+        const data = await fetch(this.jsonService.url_empleados);
+        this.empleados = await data.json() ?? [];
+        return this.empleados;
     }
 
     getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
-        return empleados.filter(empleado => empleado.id_departamento === departamentoId);
+        return this.empleados.filter(empleado => empleado.id_departamento === departamentoId);
     }
 }

@@ -15,7 +15,9 @@ export class EmpleadoFormCreacionComponent {
   departamentos: Departamento[] = [];
 
   constructor(private departamentoService: DepartamentoService, private fb: FormBuilder) {
-    this.departamentos = this.departamentoService.getAllDepartamentos();  
+    this.departamentoService.getAllDepartamentos().then(departamentos => {
+      this.departamentos = departamentos;
+    });
     
     this.createForm = this.fb.group({
       name: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],

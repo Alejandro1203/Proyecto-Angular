@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DepartamentoService } from '../../../../core/services/departamento.service';
-import { Departamento } from '../../../../core/models/departamento.model';
 import { Empleado } from '../../../../core/models/empleado.model';
 import { EmpleadoService } from '../../../../core/services/empleado.service';
+import { Departamento } from '../../../../core/models/departamento.model';
+import { DepartamentoService } from '../../../../core/services/departamento.service';
 
 @Component({
   selector: 'app-departamento-list',
@@ -20,11 +20,16 @@ export class DepartamentoListComponent {
   empleados: Empleado[] = [];
   
   constructor(private departamentoService: DepartamentoService, private empleadoService: EmpleadoService) {
-    this.departamentos = this.departamentoService.getAllDepartamentos();
+    this.departamentoService.getAllDepartamentos().then(departamentos => {
+      this.departamentos = departamentos;
+    });
   }
 
   mostrarEmpleados(departamentoId: number, departamentoNombre: string) {
-    this.empleados = this.empleadoService.getEmpleadosByDepartamento(departamentoId);
-    this.nombreDepartamento = departamentoNombre;
+      this.empleados = this.empleadoService.getEmpleadosByDepartamento(departamentoId);
+      this.nombreDepartamento = departamentoNombre;
+
+    console.log(this.empleados);
+    
   }
 }

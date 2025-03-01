@@ -1,4 +1,4 @@
-import { departamentos } from "./json.service";
+import { JsonService } from "./json.service";
 import { Injectable } from "@angular/core";
 import { Departamento } from "../models/departamento.model";
 
@@ -7,8 +7,11 @@ import { Departamento } from "../models/departamento.model";
 })
 
 export class DepartamentoService {
+
+    constructor(private jsonService: JsonService) {}
     
-    getAllDepartamentos(): Departamento[] {
-        return departamentos;
+    async getAllDepartamentos(): Promise<Departamento[]> {
+        const data = await fetch(this.jsonService.url_departamentos);
+        return await data.json() ?? [];
     }
 }
