@@ -17,6 +17,16 @@ export class EmpleadoService {
         return this.empleados;
     }
 
+    async agregarEmpleado(empleado: Empleado): Promise<void> {
+        await fetch(this.jsonService.url_empleados, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(empleado)
+        });
+    }
+
     getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
         return this.empleados.filter(empleado => empleado.id_departamento === departamentoId);
     }

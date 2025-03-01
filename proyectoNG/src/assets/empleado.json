@@ -1,52 +1,88 @@
 {
-    "lista_empleados": [
-        {
-            "id": 1,
-            "name": "Alejandro",
-            "puesto": "Responsable",
-            "id_departamento": 2
-        },
-        {
-            "id": 2,
-            "name": "Andrea",
-            "puesto": "Vendedor/a",
-            "id_departamento": 3
-        },
-        {
-            "id": 3,
-            "name": "Daniel",
-            "puesto": "Dependiente",
-            "id_departamento": 2
-        },
-        {
-            "id": 4,
-            "name": "Marina",
-            "puesto": "Responsable",
-            "id_departamento": 1
-        },
-        {
-            "id": 5,
-            "name": "Clara",
-            "puesto": "Analista",
-            "id_departamento": 1
-        },
-        {
-            "id": 6,
-            "name": "Mario",
-            "puesto": "Responsable",
-            "id_departamento": 4
-        },
-        {
-            "id": 7,
-            "name": "Nayara",
-            "puesto": "Becario/a",
-            "id_departamento": 4
-        },
-        {
-            "id": 8,
-            "name": "German",
-            "puesto": "Responsable",
-            "id_departamento": 3
-        }
-    ]
+  "lista_empleados": [
+    {
+      "id": 1,
+      "name": "Alejandro",
+      "puesto": "Responsable",
+      "id_departamento": 2
+    },
+    {
+      "id": 2,
+      "name": "Andrea",
+      "puesto": "Vendedor/a",
+      "id_departamento": 3
+    },
+    {
+      "id": 3,
+      "name": "Daniel",
+      "puesto": "Dependiente",
+      "id_departamento": 2
+    },
+    {
+      "id": 4,
+      "name": "Marina",
+      "puesto": "Responsable",
+      "id_departamento": 1
+    },
+    {
+      "id": 5,
+      "name": "Clara",
+      "puesto": "Analista",
+      "id_departamento": 1
+    },
+    {
+      "id": 6,
+      "name": "Mario",
+      "puesto": "Responsable",
+      "id_departamento": 4
+    },
+    {
+      "id": 7,
+      "name": "Nayara",
+      "puesto": "Becario/a",
+      "id_departamento": 4
+    },
+    {
+      "id": 8,
+      "name": "German",
+      "puesto": "Responsable",
+      "id_departamento": 3
+    },
+    {
+      "id": 9,
+      "name": "Raul",
+      "puesto": "Becario",
+      "id_departamento": "3"
+    },
+    {
+      "id": 10,
+      "name": "Thais",
+      "puesto": "Sacerdotisa",
+      "id_departamento": 1
+    },
+    {
+      "id": 11,
+      "name": "Aron",
+      "puesto": "Entrenador",
+      "id_departamento": 1
+    },
+    {
+      "id": 12,
+      "name": "Francisco",
+      "puesto": "Repostero",
+      "id_departamento": "2"
+    },
+    {
+      "id": 13,
+      "name": "Yoshi",
+      "puesto": "Huevo",
+      "id_departamento": "4"
+    },
+    {
+      "id": 14,
+      "name": "Wario",
+      "puesto": "Bigotes",
+      "id_departamento": "4"
+    }
+  ]
 }
