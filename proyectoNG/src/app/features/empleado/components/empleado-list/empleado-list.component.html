@@ -8,7 +8,7 @@
         <thead>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Ubicacion</th>
+            <th>Puesto</th>
             <th>ID_Departamento</th>
             <th></th>
             <th></th>
@@ -20,8 +20,25 @@
                 <td>{{empleado.name}}</td>
                 <td>{{empleado.puesto}}</td>
                 <td>{{empleado.id_departamento}}</td>
-                <td><button>Editar</button></td>
+                <td><button (click)="activarForm(empleado.id, empleado.name, empleado.puesto, empleado.id_departamento)">Editar</button></td>
                 <td><button (click)="eliminarEmpleado(empleado.id)">Eliminar</button></td>
             </tr>
     </table>
+</div>
+
+<div *ngIf="activarEditar == true">
+    <h2>Editar Empleado</h2>
+    <form [formGroup]="updateForm" (submit)="actualizarEmpleado()">
+        <select id="slc_departamento" formControlName="id_departamento">
+            <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{ departamento.name }}</option>
+        </select>
+    
+        <label for="name">Nombre</label>
+        <input id="name" type="text" formControlName="name">
+    
+        <label for="job-position">Puesto</label>
+        <input id="job-position" type="text" formControlName="puesto">
+    
+        <button type="submit" class="primary" [disabled]="!updateForm.valid">Actualizar Empleado</button>
+    </form>
 </div>

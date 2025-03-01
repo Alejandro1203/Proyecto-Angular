@@ -33,6 +33,16 @@ export class EmpleadoService {
         });
     }
 
+    async actualizarEmpleado(empleado: Empleado, empleadoId: string): Promise<void> {
+        await fetch(`${this.jsonService.url_empleados}/${empleadoId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(empleado)
+        });
+    }
+
     getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
         return this.empleados.filter(empleado => empleado.id_departamento === departamentoId);
     }

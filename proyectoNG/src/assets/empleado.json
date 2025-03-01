@@ -61,10 +61,10 @@
       "id_departamento": "1"
     },
     {
-      "id": "11",
       "name": "Aron",
-      "puesto": "Entrenador",
-      "id_departamento": "1"
+      "puesto": "Entrenadora",
+      "id_departamento": "1",
+      "id": "11"
     }
   ]
 }
