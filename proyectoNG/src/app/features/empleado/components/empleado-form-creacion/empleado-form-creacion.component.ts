@@ -19,7 +19,7 @@ export class EmpleadoFormCreacionComponent {
     
     this.createForm = this.fb.group({
       name: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],
-      jobPosition: ['', Validators.required],
+      jobPosition: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],
       idDepartamento: [1 ,Validators.required]
     });
   }
