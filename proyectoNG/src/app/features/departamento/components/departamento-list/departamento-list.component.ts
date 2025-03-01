@@ -18,15 +18,22 @@ export class DepartamentoListComponent {
   nombreDepartamento: string = '';
   
   empleados: Empleado[] = [];
+  empleadosList: Empleado[] = [];
   
   constructor(private departamentoService: DepartamentoService, private empleadoService: EmpleadoService) {
     this.departamentoService.getAllDepartamentos().then(departamentos => {
       this.departamentos = departamentos;
     });
+
+    this.empleadoService.getAllEmpleados().then(empleados => {
+      this.empleados = empleados;
+    });
   }
 
   mostrarEmpleados(departamentoId: number, departamentoNombre: string) {
-      this.empleados = this.empleadoService.getEmpleadosByDepartamento(departamentoId);
+    
+
+    this.empleadosList = this.empleados.filter(empleado => empleado.id_departamento == departamentoId);
       this.nombreDepartamento = departamentoNombre;
 
     console.log(this.empleados);

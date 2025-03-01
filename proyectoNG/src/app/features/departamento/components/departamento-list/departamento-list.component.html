@@ -19,7 +19,7 @@
     </table>
 </div>
 
-<div *ngIf="empleados.length > 0">
+<div *ngIf="empleadosList.length > 0">
     <h3>Empleados de {{ nombreDepartamento }}</h3>
     <table>
         <thead>
@@ -29,7 +29,7 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let empleado of empleados">
+            <tr *ngFor="let empleado of empleadosList">
                 <td>{{ empleado.id }}</td>
                 <td>{{ empleado.name }}</td>
                 <td>{{ empleado.puesto }}</td>
