@@ -12,27 +12,25 @@ import { DepartamentoService } from '../../../../core/services/departamento.serv
   templateUrl: './empleado-list.component.html',
   styleUrl: './empleado-list.component.css'
 })
+
 export class EmpleadoListComponent {
   empleados: Empleado[] = [];
-  empleadosList: Empleado[] = [];
   departamentos: Departamento[] = [];
   activarEditar: boolean = false;
   updateForm: FormGroup;
   id_empleado: string = '';
 
   constructor(private empleadoService: EmpleadoService, private departamentoService: DepartamentoService, private fb: FormBuilder) {
-    this.empleadoService.getAllEmpleados().then(empleados => {
-      this.empleados = empleados;
-    });
+    this.cargarListaEmpleados();
 
     this.departamentoService.getAllDepartamentos().then(departamentos => {
       this.departamentos = departamentos;
     });
 
     this.updateForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],
-      puesto: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],
-      id_departamento: [1 ,Validators.required]
+      name: ['', [Validators.required, Validators.pattern("^[A-Za-z]+$"), Validators.minLength(2)]],
+      puesto: ['', [Validators.required, Validators.pattern("^[A-Za-z]+$"), Validators.minLength(3)]],
+      id_departamento: [1, Validators.required]
     });
   }
 
@@ -40,16 +38,12 @@ export class EmpleadoListComponent {
     const slc_departamento = Number((document.getElementById('slc_departamento') as HTMLSelectElement).value);
 
     if (slc_departamento === 0) {
-      this.empleadoService.getAllEmpleados().then(empleados => {
-        this.empleados = empleados;
-      });
+      this.cargarListaEmpleados();
     } else {
       this.empleadoService.getAllEmpleados().then(empleados => {
         this.empleados = empleados;
-        this.empleadosList = this.empleados.filter(empleado => empleado.id_departamento == slc_departamento);
-        this.empleados = this.empleadosList;
+        this.empleados = this.empleados.filter(empleado => empleado.id_departamento == slc_departamento);
       });
-      
     }
     
     return this.empleados;
@@ -58,9 +52,8 @@ export class EmpleadoListComponent {
   eliminarEmpleado(empleadoId: number): void {
     if(confirm('¿Está seguro de eliminar este empleado?')) {
       this.empleadoService.eliminarEmpleado(empleadoId).then(() => {
-        this.empleadoService.getAllEmpleados().then(empleados => {
-          this.empleados = empleados;
-        });
+        this.cargarListaEmpleados();
+        console.log('Empleado eliminado');
       });
     }
   }
@@ -79,13 +72,18 @@ export class EmpleadoListComponent {
   actualizarEmpleado(): void {
     if(confirm('¿Está seguro de actualizar este empleado?')) {
       let nuevoEmpleado: Empleado = this.updateForm.value;
+      
       this.empleadoService.actualizarEmpleado(nuevoEmpleado, this.id_empleado).then(() => {
-        this.empleadoService.getAllEmpleados().then(empleados => {
-          this.empleados = empleados;
-        });
+        this.cargarListaEmpleados();
         this.activarEditar = false;
         console.log('Empleado actualizado');
       }); 
     }
+  }
+
+  cargarListaEmpleados(): void {
+    this.empleadoService.getAllEmpleados().then(empleados => {
+      this.empleados = empleados;
+    });
   }
 }

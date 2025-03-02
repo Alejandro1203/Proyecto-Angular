@@ -20,8 +20,8 @@
                 <td>{{empleado.name}}</td>
                 <td>{{empleado.puesto}}</td>
                 <td>{{empleado.id_departamento}}</td>
-                <td><button (click)="activarForm(empleado.id, empleado.name, empleado.puesto, empleado.id_departamento)">Editar</button></td>
-                <td><button (click)="eliminarEmpleado(empleado.id)">Eliminar</button></td>
+                <td><button class="button" (click)="activarForm(empleado.id, empleado.name, empleado.puesto, empleado.id_departamento)">Editar</button></td>
+                <td><button class="button" (click)="eliminarEmpleado(empleado.id)">Eliminar</button></td>
             </tr>
     </table>
 </div>
@@ -39,6 +39,6 @@
         <label for="job-position">Puesto</label>
         <input id="job-position" type="text" formControlName="puesto">
     
-        <button type="submit" class="primary" [disabled]="!updateForm.valid">Actualizar Empleado</button>
+        <button type="submit" class="primary button" [disabled]="!updateForm.valid">Actualizar Empleado</button>
     </form>
 </div>

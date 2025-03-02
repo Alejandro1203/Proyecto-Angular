@@ -42,8 +42,4 @@ export class EmpleadoService {
             body: JSON.stringify(empleado)
         });
     }
-
-    getEmpleadosByDepartamento(departamentoId: number): Empleado[] {
-        return this.empleados.filter(empleado => empleado.id_departamento === departamentoId);
-    }
 }
