@@ -15,8 +15,6 @@ import { EmpleadoService } from '../../../../core/services/empleado.service';
 export class EmpleadoFormCreacionComponent {
   createForm: FormGroup;
   departamentos: Departamento[] = [];
-  empleados: Empleado[] = [];
-  nuevo_id: number = 0;
 
   constructor(private departamentoService: DepartamentoService, private fb: FormBuilder, private empleadoService: EmpleadoService) {
     this.departamentoService.getAllDepartamentos().then(departamentos => {
@@ -24,8 +22,8 @@ export class EmpleadoFormCreacionComponent {
     });
     
     this.createForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],
-      puesto: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]*$")]],
+      name: ['', [Validators.required, Validators.pattern("^[A-Za-z]+$"), Validators.minLength(2)]],
+      puesto: ['', [Validators.required, Validators.pattern("^[A-Za-z]+$"), Validators.minLength(3)]],
       id_departamento: [1 ,Validators.required]
     });
   }

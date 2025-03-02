@@ -1,14 +1,17 @@
-<h2 class="section-heading">Crear Empleado</h2>
-<form [formGroup]="createForm" (submit)="agregarEmpleado()">
-    <select id="slc_departamento" formControlName="id_departamento">
-        <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{ departamento.name }}</option>
-    </select>
+<div class="container">
+    <h2 class="section-heading">Crear Empleado</h2>
+    <form [formGroup]="createForm" (submit)="agregarEmpleado()">
+        <select id="slc_departamento" formControlName="id_departamento">
+            <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{ departamento.name }}
+            </option>
+        </select>
 
-    <label for="name">Nombre</label>
-    <input id="name" type="text" formControlName="name">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" formControlName="name">
 
-    <label for="job-position">Puesto</label>
-    <input id="job-position" type="text" formControlName="puesto">
+        <label for="job-position">Puesto</label>
+        <input id="job-position" type="text" formControlName="puesto">
 
-    <button type="submit" class="primary" [disabled]="!createForm.valid">Crear Empleado</button>
-</form>
+        <button type="submit" class="primary" [disabled]="!createForm.valid">Crear Empleado</button>
+    </form>
+</div>

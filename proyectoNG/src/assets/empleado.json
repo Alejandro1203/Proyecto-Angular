@@ -1,10 +1,10 @@
 {
   "lista_empleados": [
     {
-      "id": "1",
       "name": "Alejandro",
-      "puesto": "Responsable",
-      "id_departamento": "2"
+      "puesto": "CEO",
+      "id_departamento": "2",
+      "id": "1"
     },
     {
       "id": "2",
@@ -77,6 +77,18 @@
       "name": "Kenay",
       "puesto": "Perro",
       "id_departamento": "3"
+    },
+    {
+      "id": "cfd1",
+      "name": "Wario",
+      "puesto": "Bigotes",
+      "id_departamento": "4"
+    },
+    {
+      "name": "Juanito",
+      "puesto": "Alimanya",
+      "id_departamento": "3",
+      "id": "5efc"
     }
   ]
 }
