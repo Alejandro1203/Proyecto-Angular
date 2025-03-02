@@ -1,0 +1,27 @@
+Manual  de uso Proyecto Angular
+
+*Para abrir terminal integrado de forma rápida, hacer clic derecho en la carpeta indicada y elegir opción 'Abrir en terminal integrado'*
+
+1) Abrir terminal integrado en proyectoNG y poner comando: "npm install"
+
+	Ruta: "C:\Users\USUARIO\Documents\GitHub\Proyecto-Angular\proyectoNG"
+	Comando: "npm install"
+
+2) Abrir terminal integrado en proyectoNG y poner comando: "ng serve"
+
+	Ruta: "C:\Users\USUARIO\Documents\GitHub\Proyecto-Angular\proyectoNG"
+	Comando: "ng serve"
+
+3) Abrir terminal integrado en assets y poner comando: "json-server --watch departamentos.json"
+
+	Ruta: "C:\Users\USUARIO\Documents\GitHub\Proyecto-Angular\proyectoNG\src\assets"
+	Comando: "json-server --watch departamentos.json"
+
+4) Abrir terminal integrado en assets y poner comando: "json-server --watch empleado.json --port 3001"
+
+	Ruta: "C:\Users\USUARIO\Documents\GitHub\Proyecto-Angular\proyectoNG\src\assets"
+	Comando: "json-server --watch empleado.json --port 3001"
+
+
+
+
