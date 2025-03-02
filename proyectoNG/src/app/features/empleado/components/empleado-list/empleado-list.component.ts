@@ -14,6 +14,7 @@ import { DepartamentoService } from '../../../../core/services/departamento.serv
 })
 export class EmpleadoListComponent {
   empleados: Empleado[] = [];
+  empleadosList: Empleado[] = [];
   departamentos: Departamento[] = [];
   activarEditar: boolean = false;
   updateForm: FormGroup;
@@ -38,12 +39,17 @@ export class EmpleadoListComponent {
   getEmpleadosByDepartamento(): Empleado[] {
     const slc_departamento = Number((document.getElementById('slc_departamento') as HTMLSelectElement).value);
 
-    if (slc_departamento == 0) {
+    if (slc_departamento === 0) {
       this.empleadoService.getAllEmpleados().then(empleados => {
         this.empleados = empleados;
       });
     } else {
-      this.empleados = this.empleadoService.getEmpleadosByDepartamento(slc_departamento);
+      this.empleadoService.getAllEmpleados().then(empleados => {
+        this.empleados = empleados;
+        this.empleadosList = this.empleados.filter(empleado => empleado.id_departamento == slc_departamento);
+        this.empleados = this.empleadosList;
+      });
+      
     }
     
     return this.empleados;

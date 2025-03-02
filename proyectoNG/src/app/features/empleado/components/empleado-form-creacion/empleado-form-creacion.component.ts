@@ -34,10 +34,6 @@ export class EmpleadoFormCreacionComponent {
     let nuevoEmpleado: Empleado = this.createForm.value;
     this.empleadoService.agregarEmpleado(nuevoEmpleado);
     console.log('Empleado agregado');
-    this.createForm.reset({
-      name: '',
-      puesto: '',
-      id_departamento: 1
-    });
+    this.createForm.reset();
   }
 }
