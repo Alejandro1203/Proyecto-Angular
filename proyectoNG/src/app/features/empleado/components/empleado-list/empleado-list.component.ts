@@ -38,7 +38,7 @@ export class EmpleadoListComponent {
   getEmpleadosByDepartamento(): Empleado[] {
     const slc_departamento = Number((document.getElementById('slc_departamento') as HTMLSelectElement).value);
 
-    if (slc_departamento === 0) {
+    if (slc_departamento == 0) {
       this.empleadoService.getAllEmpleados().then(empleados => {
         this.empleados = empleados;
       });

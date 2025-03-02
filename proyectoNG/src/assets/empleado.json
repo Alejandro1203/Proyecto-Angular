@@ -62,9 +62,15 @@
     },
     {
       "name": "Aron",
-      "puesto": "Entrenadora",
+      "puesto": "Entrenador",
       "id_departamento": "1",
       "id": "11"
+    },
+    {
+      "id": "6fd5",
+      "name": "Ana",
+      "puesto": "Profesora",
+      "id_departamento": 1
     }
   ]
 }
